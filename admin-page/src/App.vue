@@ -33,6 +33,29 @@
 			</v-btn>
 		</v-app-bar>
 
+		<!-- nav side bar -->
+		<v-navigation-drawer app>
+			<v-list-item>
+				<v-list-item-content>
+					<v-list-item-title class="text-h6"> Application </v-list-item-title>
+					<v-list-item-subtitle> subtext </v-list-item-subtitle>
+				</v-list-item-content>
+			</v-list-item>
+
+			<v-divider></v-divider>
+
+			<v-list dense nav>
+				<v-list-item v-for="item in items" :key="item.title" link :to="item.to">
+					<v-list-item-icon>
+						<v-icon>{{ item.icon }}</v-icon>
+					</v-list-item-icon>
+
+					<v-list-item-content>
+						<v-list-item-title>{{ item.title }}</v-list-item-title>
+					</v-list-item-content>
+				</v-list-item>
+			</v-list>
+		</v-navigation-drawer>
 		<v-main>
 			<router-view />
 		</v-main>
@@ -41,10 +64,20 @@
 
 <script>
 export default {
-	name: 'App',
-
-	data: () => ({
-		//
-	}),
+	components: {},
+	data() {
+		return {
+			items: [
+				{ title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
+				{ title: 'Grid System', icon: 'mdi-image', to: '/grid-system' },
+			],
+			right: null,
+		};
+	},
+	setup() {},
+	created() {},
+	mounted() {},
+	unmounted() {},
+	methods: {},
 };
 </script>
