@@ -69,14 +69,14 @@ export default {
 					icon: 'mdi-application-brackets',
 					to: '/typography',
 				},
-				{ title: 'Tables', icon: 'mdi-file-table', to: '/grid-list' },
+				{ title: 'Tables', icon: 'mdi-file-table', to: '/tables' },
 				{
 					title: 'Forms',
 					icon: 'mdi-format-annotation-plus',
-					to: '/breakpoints',
+					to: '/forms',
 				},
-				{ title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/typography' },
-				{ title: 'Icons', icon: 'mdi-cat', to: '/typography' },
+				{ title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/buttons' },
+				{ title: 'Icons', icon: 'mdi-cat', to: '/icons' },
 			],
 			right: null,
 		};
