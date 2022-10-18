@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<v-row>
-			<v-col>
+			<v-col cols="12">
 				<v-card class="mx-auto" color="grey lighten-4" max-width="600">
 					<v-card-title>
 						<v-icon
@@ -45,6 +45,34 @@
 					</v-sheet>
 				</v-card>
 			</v-col>
+			<v-col v-for="count in 4" :key="count" cols="12" sm="6" md="4" lg="3">
+				<v-card class="mx-auto text-center" color="green" dark max-width="600">
+					<v-card-text>
+						<v-sheet color="rgba(0, 0, 0, .12)">
+							<v-sparkline
+								:value="value"
+								color="rgba(255, 255, 255, .7)"
+								height="100"
+								padding="24"
+								stroke-linecap="round"
+								smooth
+							>
+								<template #label="item"> ${{ item.value }} </template>
+							</v-sparkline>
+						</v-sheet>
+					</v-card-text>
+
+					<v-card-text>
+						<div class="text-h4 font-weight-thin">Sales Last 24h</div>
+					</v-card-text>
+
+					<v-divider></v-divider>
+
+					<v-card-actions class="justify-center">
+						<v-btn block text> Go to Report </v-btn>
+					</v-card-actions>
+				</v-card>
+			</v-col>
 		</v-row>
 	</v-container>
 </template>
@@ -57,6 +85,7 @@ export default {
 	data: () => ({
 		checking: false,
 		heartbeats: [],
+		value: [423, 446, 675, 510, 590, 610, 760],
 	}),
 	computed: {
 		avg() {
