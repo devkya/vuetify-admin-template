@@ -64,7 +64,19 @@ export default {
 				{ title: 'Grid System', icon: 'mdi-image', to: '/grid-system' },
 				{ title: 'Grid List', icon: 'mdi-image', to: '/grid-list' },
 				{ title: 'BreakPoints', icon: 'mdi-image', to: '/breakpoints' },
-				{ title: 'Typography', icon: 'mdi-image', to: '/typography' },
+				{
+					title: 'Typography',
+					icon: 'mdi-application-brackets',
+					to: '/typography',
+				},
+				{ title: 'Tables', icon: 'mdi-file-table', to: '/grid-list' },
+				{
+					title: 'Forms',
+					icon: 'mdi-format-annotation-plus',
+					to: '/breakpoints',
+				},
+				{ title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/typography' },
+				{ title: 'Icons', icon: 'mdi-cat', to: '/typography' },
 			],
 			right: null,
 		};
