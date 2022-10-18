@@ -65,3 +65,8 @@ insert_final_newline = true
 			</v-container>
 		</v-card>
 ```
+
+## 궁금증
+### Grid System vs Flex
+아직까지 무슨 차이인지 모르겠다.  
+`v-row`, `v-col` 에서도 align, justify 를 지원한다...  
