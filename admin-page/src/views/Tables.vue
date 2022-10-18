@@ -190,7 +190,7 @@ export default {
 	methods: {
 		bmiOver(calories) {
 			if (calories > 300) {
-				return 'background-color:blue';
+				return 'background-color:#1976d2; color:white';
 			} else return '';
 		},
 	},
