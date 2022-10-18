@@ -4,10 +4,10 @@
 <script>
 export default {
 	components: {},
+	setup() {},
 	data() {
 		return {};
 	},
-	setup() {},
 	created() {},
 	mounted() {},
 	unmounted() {},

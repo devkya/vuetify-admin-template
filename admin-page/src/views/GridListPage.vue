@@ -1,6 +1,10 @@
 <template>
-	<v-container class="red" fluid>
-		<v-card class="yellow pa-3">대시보드</v-card>
+	<v-container>
+		<v-row>
+			<v-col v-for="count in 12" :key="count" cols="3">
+				<v-card class="pa-3" outlined>Col</v-card>
+			</v-col>
+		</v-row>
 	</v-container>
 </template>
 <script>
@@ -8,7 +12,9 @@ export default {
 	components: {},
 	setup() {},
 	data() {
-		return {};
+		return {
+			sampleData: '',
+		};
 	},
 	created() {},
 	mounted() {},
