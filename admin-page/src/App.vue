@@ -6,7 +6,9 @@
 export default {
 	components: {},
 	setup() {},
-	data() {},
+	data() {
+		return {};
+	},
 	created() {},
 	mounted() {},
 	unmounted() {},

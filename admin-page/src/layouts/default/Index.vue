@@ -79,6 +79,9 @@ export default {
 				},
 				{ title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/buttons' },
 				{ title: 'Icons', icon: 'mdi-cat', to: '/icons' },
+				{ title: 'SignIn', icon: 'mdi-cat', to: '/authentication/sign-in' },
+				{ title: 'SignUp', icon: 'mdi-cat', to: '/authentication/sign-up' },
+				{ title: 'ProductList', icon: 'mdi-cat', to: '/page/product-list' },
 			],
 			select_item: '',
 		};

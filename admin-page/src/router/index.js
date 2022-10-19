@@ -1,80 +1,132 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Dashboard from '@/views/Dashboard';
-import GridSystem from '@/views/GridSystem';
-import PageNotFound from '@/views/PageNotFound';
-import GridListPage from '@/views/GridListPage';
-import Breakpoints from '@/views/Breakpoints';
-import Typography from '@/views/Typography';
-import Tables from '@/views/Tables';
-import Forms from '@/views/Forms';
-import Buttons from '@/views/Buttons';
-import Icons from '@/views/Icons';
-import DefaultLayout from '@/layouts/default/Index';
+
 Vue.use(VueRouter);
 
 const routes = [
 	{
 		path: '/',
-		name: 'DefaultLayout',
-		component: DefaultLayout,
+		component: () =>
+			import(
+				/* webpackChunkName: "layouts-default-index" */
+				'@/layouts/default/Index'
+			),
 		children: [
 			{
 				path: '/',
 				name: 'Dashboard',
-				component: Dashboard,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-dashboard" */
+						'@/views/Dashboard'
+					),
 			},
 			{
 				path: '/grid-system',
 				name: 'GridSystem',
-				component: GridSystem,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-grid-system" */
+						'@/views/GridSystem'
+					),
 			},
 			{
-				path: '/grid-list',
+				path: '/grid-list-page',
 				name: 'GridListPage',
-				component: GridListPage,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-grid-list-page" */
+						'@/views/GridListPage'
+					),
 			},
 			{
 				path: '/breakpoints',
 				name: 'Breakpoints',
-				component: Breakpoints,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-breakpoints" */
+						'@/views/Breakpoints'
+					),
 			},
 			{
 				path: '/typography',
 				name: 'Typography',
-				component: Typography,
-			},
-			{
-				path: '/tables',
-				name: 'Tables',
-				component: Tables,
-			},
-			{
-				path: '/forms',
-				name: 'Forms',
-				component: Forms,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-typography" */
+						'@/views/Typography'
+					),
 			},
 			{
 				path: '/buttons',
 				name: 'Buttons',
-				component: Buttons,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-buttons" */
+						'@/views/Buttons'
+					),
 			},
 			{
 				path: '/icons',
 				name: 'Icons',
-				component: Icons,
+				component: () =>
+					import(
+						/* webpackChunkName: "views-icons" */
+						'@/views/Icons'
+					),
+			},
+		],
+	},
+	{
+		path: '/authentication',
+		component: () =>
+			import(
+				/* webpackChunkName: "layouts-authentication-index" */
+				'@/layouts/authentication/Index'
+			),
+		children: [
+			{
+				path: 'sign-in',
+				name: 'SignIn',
+				component: () =>
+					import(
+						/* webpackChunkName: "views-sign-in" */
+						'@/views/authentication/SignIn'
+					),
 			},
 			{
-				path: '/*',
-				name: 'PageNotFound',
-				component: PageNotFound,
+				path: 'sign-up',
+				name: 'SignUp',
+				component: () =>
+					import(
+						/* webpackChunkName: "views-sign-up" */
+						'@/views/authentication/SignUp'
+					),
+			},
+		],
+	},
+	{
+		path: '/page',
+		component: () =>
+			import(
+				/* webpackChunkName: "layouts-page-index" */
+				'@/layouts/page/Index'
+			),
+		children: [
+			{
+				path: 'product-list',
+				name: 'ProductList',
+				component: () =>
+					import(
+						/* webpackChunkName: "views-product-list" */
+						'@/views/page/ProductList'
+					),
 			},
 		],
 	},
 ];
-
 const router = new VueRouter({
-	mode: 'history',
+	mode: process.env.NODE_ENV === 'production' ? 'hash' : 'history',
 	base: process.env.BASE_URL,
 	routes,
 });
